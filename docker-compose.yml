@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    environment:
+      - QDRANT_API_KEY=your-secret-key 
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    container_name: qdrant
+
+volumes:
+  qdrant_storage:
